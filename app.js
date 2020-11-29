@@ -10,7 +10,7 @@ bot.on('ready', async () => {
 });
 
 bot.on('message', async message => {
-    if(message.content === `${prefix}clean`) {
+    if (message.content === `${prefix}clean` && message.member.hasPermission('ADMINISTRATOR')) {
         let messagesListLength = 0;
         let stop = false;
 
@@ -33,6 +33,10 @@ bot.on('message', async message => {
                 }
             }
         }, 6000);
+    }
+
+    if (message.content === `${prefix}clean` && !message.member.hasPermission('ADMINISTRATOR')) {
+        await message.reply("Seul les administrateurs peuvent lancer cette commande");
     }
 });
 
