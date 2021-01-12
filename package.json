@@ -1,11 +1,11 @@
 {
-  "name": "E-Colo",
+  "name": "e-eolo",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "src/app.js",
   "scripts": {
-    "start": "env-cmd node app",
-    "dev": "env-cmd nodemon app"
+    "start": "env-cmd node src/app",
+    "dev": "env-cmd nodemon src/app"
   },
   "keywords": [],
   "author": "",
