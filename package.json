@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "env-cmd node app"
+    "start": "env-cmd node app",
+    "dev": "env-cmd nodemon app"
   },
   "keywords": [],
   "author": "",
@@ -12,5 +13,8 @@
   "dependencies": {
     "discord.js": "^12.5.1",
     "env-cmd": "^10.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
   }
 }
