@@ -1,0 +1,13 @@
+Guide d'utilisation de E-Colo ?
+
+***Deux commandes à retenir :***
+    - {CMD_PREFIX}clean
+    - {CMD_PREFIX}help
+
+:warning: Pour utiliser les commandes, il faut être **administrateur** !
+
+***Comment nettoyer un salon textuel ?***
+Pour nettoyer un salon textuel, il suffit de taper la commande {CMD_PREFIX}clean dans ce salon puis il va être doucement nettoyé de tous ses messages existants.
+
+***Comment changer le préfix ?***
+Pour le moment, il n'est pas possible de changer le préfix.

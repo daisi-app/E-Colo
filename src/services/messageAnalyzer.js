@@ -1,5 +1,7 @@
 'use strict';
-const {deleteMessage} = require("./channel");
+const {deleteMessage} = require("./clean");
+const {helpMessage} = require("./help");
+const {clean, help} = require("../constants/commands");
 
 const analyseMessage = async (bot, message) => {
     const prefix = process.env.CMD_PREFIX;
@@ -8,13 +10,11 @@ const analyseMessage = async (bot, message) => {
 
     switch (msgCmd[0]) {
         case `${prefix}clean`:
-            // TODO: Clean actions
-            execFunction = 'clean';
+            execFunction = clean;
             break;
 
         case `${prefix}help`:
-            // TODO: Help message
-            execFunction = 'help';
+            execFunction = help;
             break;
 
         default:
@@ -24,8 +24,11 @@ const analyseMessage = async (bot, message) => {
     if (execFunction && !message.member.hasPermission('ADMINISTRATOR')) {
         console.log('Il faut être administrateur pour lancer cette commande');
     } else if (execFunction && message.member.hasPermission('ADMINISTRATOR')) {
-        console.log(`Je veux exécuter la fonction ${execFunction}`);
-        await deleteMessage(bot, message);
+        if (execFunction === clean) {
+            await deleteMessage(bot, message);
+        } else if (execFunction === help) {
+            helpMessage(message);
+        }
     }
 };
 
